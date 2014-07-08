@@ -1,0 +1,2 @@
+module FinishedProjectsHelper
+end

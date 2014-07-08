@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @finished_project.student %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @finished_project.project %>
+</p>
+
+<p>
+  <strong>Submitted:</strong>
+  <%= @finished_project.submitted %>
+</p>
+
+<p>
+  <strong>Repo:</strong>
+  <%= @finished_project.repo %>
+</p>
+
+<%= link_to 'Edit', edit_finished_project_path(@finished_project) %> |
+<%= link_to 'Back', finished_projects_path %>

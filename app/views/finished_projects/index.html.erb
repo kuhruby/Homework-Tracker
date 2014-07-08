@@ -1,0 +1,31 @@
+<h1>Listing finished_projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Project</th>
+      <th>Submitted</th>
+      <th>Repo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finished_projects.each do |finished_project| %>
+      <tr>
+        <td><%= finished_project.student %></td>
+        <td><%= finished_project.project %></td>
+        <td><%= finished_project.submitted %></td>
+        <td><%= finished_project.repo %></td>
+        <td><%= link_to 'Show', finished_project %></td>
+        <td><%= link_to 'Edit', edit_finished_project_path(finished_project) %></td>
+        <td><%= link_to 'Destroy', finished_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Finished project', new_finished_project_path %>
