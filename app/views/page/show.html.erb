@@ -22,13 +22,19 @@
         <td><%= project.assigned %></td>
         <td><%= project.due %></td>
         <% finished_project = @student.project_for(project) %>
-        <td><%= finished_project.submitted %></td>
         <td>
+          <% if finished_project.submitted %>
+            <i class="fa fa-check-square-o"></i>
+          <% else %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </td>
+        <td class="form">
           <% if finished_project.submitted %>
             <%= finished_project.repo %>
           <% else %>
             <%= form_for (finished_project) do |f| %>
-              <div class="field">
+              <div>
                 <%= f.text_field :repo %>
                 <%= f.submit "Send" %>
               </div>
