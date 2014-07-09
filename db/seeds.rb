@@ -22,10 +22,12 @@ due: "2014-06-23"
 week3 = Project.create title: "TDD App", description: "Test Driven Dev",
 assigned: "2014-06-26", due: "2014-06-30"
 
-[week1, week2, week3].each do |title|
+week4 = Project.create title: "Rails App", description: "Homework Tracker",
+assigned: "2014-07-03", due: "2014-07-08"
+
+[week1, week2, week3, week4].each do |title|
   Student.all.each do |name|
-    FinishedProject.create student: name, project: title, submitted: [true, false].sample,
-    repo: ":)"
+    FinishedProject.create student: name, project: title, submitted: [true, false].sample
   end
 end
 

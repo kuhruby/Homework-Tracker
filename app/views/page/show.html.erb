@@ -1,39 +1,40 @@
-<h1>Listing finished_projects</h1>
+<h1 class="top">Weekend Projects</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr style="height: 26px">
       <!-- <th>Student</th> -->
       <th>Project</th>
       <th>Description</th>
       <th>Assigned Date</th>
       <th>Due Date</th>
       <th>Submitted</th>
-      <th>Repo</th>
+      <th style="padding-left: 12px">Repo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= project.assigned %></td>
-        <td><%= project.due %></td>
+      <tr style="height: 26px">
+        <td style="width: 150px"><%= project.title %></td>
+        <td style="width: 150px"><%= project.description %></td>
+        <td style="width: 150px"><%= project.assigned %></td>
+        <td style="width: 100px"><%= project.due %></td>
         <% finished_project = @student.project_for(project) %>
-        <td>
+        <td class="text-center">
           <% if finished_project.submitted %>
-            <i class="fa fa-check-square-o"></i>
+            <i class="fa fa-check-square-o fa-lg"></i>
           <% else %>
-            <i class="fa fa-times"></i>
+            <i class="fa fa-times fa-lg"></i>
           <% end %>
         </td>
-        <td class="form">
+        <td style="padding-left: 12px"class="form">
           <% if finished_project.submitted %>
             <%= finished_project.repo %>
           <% else %>
             <%= form_for (finished_project) do |f| %>
+              <%= f.hidden_field :submitted, value: true %>
               <div>
                 <%= f.text_field :repo %>
                 <%= f.submit "Send" %>

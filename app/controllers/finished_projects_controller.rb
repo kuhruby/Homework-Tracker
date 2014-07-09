@@ -40,14 +40,10 @@ class FinishedProjectsController < ApplicationController
   # PATCH/PUT /finished_projects/1
   # PATCH/PUT /finished_projects/1.json
   def update
-    respond_to do |format|
-      if @finished_project.update(finished_project_params)
-        format.html { redirect_to @finished_project, notice: 'Finished project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @finished_project }
-      else
-        format.html { render :edit }
-        format.json { render json: @finished_project.errors, status: :unprocessable_entity }
-      end
+    if @finished_project.update(finished_project_params)
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
