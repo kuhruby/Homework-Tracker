@@ -2,9 +2,9 @@
 
 Login with The Turtles!
 
-leo@sewers.com
-don@sewers.com
-mike@sewers.com
-raph@sewers.com
+- leo@sewers.com
+- don@sewers.com
+- mike@sewers.com
+- raph@sewers.com
 
 password is “pizzapizza”
