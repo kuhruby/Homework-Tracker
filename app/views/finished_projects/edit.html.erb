@@ -1,6 +1,6 @@
-<h1>Editing finished_project</h1>
+<h1>Editing <%= @finished_project.project.title %></h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @finished_project %> |
-<%= link_to 'Back', finished_projects_path %>
+<%= link_to 'Back', page_show_path %>

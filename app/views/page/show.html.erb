@@ -1,4 +1,4 @@
-<h1 class="top">Weekend Projects</h1>
+<h1 class="top"><%= current_user.name %>'s Weekend Projects</h1>
 
 <table>
   <thead>
@@ -16,12 +16,12 @@
 
   <tbody>
     <% @projects.each do |project| %>
-      <tr style="height: 26px">
+      <tr style="height: 28px">
         <td style="width: 150px"><%= project.title %></td>
         <td style="width: 150px"><%= project.description %></td>
         <td style="width: 150px"><%= project.assigned %></td>
         <td style="width: 100px"><%= project.due %></td>
-        <% finished_project = @student.project_for(project) %>
+        <% finished_project = @user.project_for(project) %>
         <td class="text-center">
           <% if finished_project.submitted %>
             <i class="fa fa-check-square-o fa-lg"></i>
@@ -42,6 +42,9 @@
             <% end %>
           <% end %>
         </td>
+        <td style="padding-left: 12px; padding-right: 4px"><%= link_to 'Show', finished_project %></td>
+        <td>|</td>
+        <td style="padding-left: 4px; padding-right: 4px"><%= link_to 'Edit', edit_finished_project_path(finished_project) %></td>
       </tr>
     <% end %>
   </tbody>

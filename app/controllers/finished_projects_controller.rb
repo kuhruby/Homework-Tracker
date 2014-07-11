@@ -1,10 +1,12 @@
 class FinishedProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_finished_project, only: [:show, :edit, :update, :destroy]
 
   # GET /finished_projects
   # GET /finished_projects.json
   def index
     @finished_projects = FinishedProject.all
+    redirect_to root_path
   end
 
   # GET /finished_projects/1
@@ -65,6 +67,6 @@ class FinishedProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def finished_project_params
-      params.require(:finished_project).permit(:student_id, :project_id, :submitted, :repo)
+      params.require(:finished_project).permit(:user_id, :project_id, :submitted, :repo)
     end
 end

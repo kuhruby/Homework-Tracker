@@ -10,7 +10,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem "simple_form", "3.1.0.rc2"
 gem "carrierwave"
 gem "devise"
 gem "rails_admin"

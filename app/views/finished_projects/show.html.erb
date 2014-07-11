@@ -1,18 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Student:</strong>
-  <%= @finished_project.student %>
+  <%= @finished_project.user.name %>
 </p>
 
 <p>
   <strong>Project:</strong>
-  <%= @finished_project.project %>
+  <%= @finished_project.project.title %>
 </p>
 
 <p>
   <strong>Submitted:</strong>
-  <%= @finished_project.submitted %>
+    <% if @finished_project.submitted %>
+      <%= "Yes" %>
+    <% else %>
+      <%= "No" %>
+    <% end %>
 </p>
 
 <p>
